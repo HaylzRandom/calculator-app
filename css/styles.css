@@ -9,8 +9,8 @@
     /* Calculator Background */
     --output-clr: hsla(224, 36%, 15%, 1);
     --keys-grid-bg-clr: hsla(224, 30%, 21%, 1);
-    --keys-number-bg-clr: hsla(27, 15%, 65%, 1);
-    --keys-operation-bg-clr: hsla(27, 15%, 65%, 1);
+    --keys-number-bg-clr: rgba(234, 227, 220, 1);
+    --keys-operation-bg-clr: rgba(234, 227, 220, 1);
     --keys-clear-bg-clr: hsla(224, 21%, 49%, 1);
     --keys-equal-bg-clr: hsla(6, 63%, 50%, 1);
 
@@ -21,9 +21,72 @@
     --keys-clear-text-clr: hsla(0, 0%, 100%, 1);
     --keys-equal-text-clr: hsla(0, 0%, 100%, 1);
 
+    /* Box Shadow */
+    --bs-number-clr: hsla(27, 15%, 65%, 1);
+    --bs-delete-clr: hsla(225, 28%, 35%, 1);
+    --bs-equals-clr: hsla(6, 70%, 34%, 1);
+
     /* Range Slider */
     --range-thumb-clr: hsla(6, 63%, 50%, 1);
     --range-bg-clr: hsla(223, 31%, 20%, 1);
+}
+
+:root.white {
+    /* Background */
+    --bg-clr: hsla(0, 0%, 90%, 1);
+
+    /* Calculator Background */
+    --output-clr: hsla(9, 1%, 93%, 1);
+    --keys-grid-bg-clr: hsla(0, 5%, 81%, 1);
+    --keys-number-bg-clr: hsla(45, 7%, 89%, 1);
+    --keys-operation-bg-clr: hsla(45, 7%, 89%, 1);
+    --keys-clear-bg-clr: hsla(184, 42%, 37%, 1);
+    --keys-equal-bg-clr: hsla(25, 98%, 40%, 1);
+
+    /* Calculator Text */
+    --text-clr: hsla(60, 10%, 19%, 1);
+    --keys-number-text-clr: hsla(60, 10%, 19%, 1);
+    --keys-operation-text-clr: hsla(60, 10%, 19%, 1);
+    --keys-clear-text-clr: hsla(0, 0%, 100%, 1);
+    --keys-equal-text-clr: hsla(0, 0%, 100%, 1);
+
+    /* Box Shadow */
+    --bs-number-clr: hsla(34, 11%, 61%, 1);
+    --bs-delete-clr: hsla(184, 59%, 25%, 1);
+    --bs-equals-clr: hsla(25, 99%, 27%, 1);
+
+    /* Range Slider */
+    --range-thumb-clr: hsla(25, 98%, 40%, 1);
+    --range-bg-clr: hsla(0, 5%, 81%, 1);
+}
+
+:root.purple {
+    /* Background */
+    --bg-clr: hsla(267, 74%, 9%, 1);
+
+    /* Calculator Background */
+    --output-clr: hsla(268, 71%, 12%, 1);
+    --keys-grid-bg-clr: hsla(268, 71%, 12%, 1);
+    --keys-number-bg-clr: hsla(268, 47%, 21%, 1);
+    --keys-operation-bg-clr: hsla(268, 47%, 21%, 1);
+    --keys-clear-bg-clr: hsla(280, 90%, 26%, 1);
+    --keys-equal-bg-clr: hsla(176, 100%, 44%, 1);
+
+    /* Calculator Text */
+    --text-clr: hsla(52, 100%, 62%, 1);
+    --keys-number-text-clr: hsla(52, 100%, 62%, 1);
+    --keys-operation-text-clr: hsla(52, 100%, 62%, 1);
+    --keys-clear-text-clr: hsla(0, 0%, 100%, 1);
+    --keys-equal-text-clr: hsla(198, 20%, 13%, 1);
+
+    /* Box Shadow */
+    --bs-number-clr: hsla(290, 70%, 36%, 1);
+    --bs-delete-clr: hsla(285, 91%, 52%, 1);
+    --bs-equals-clr: hsla(176, 93%, 70%, 1);
+
+    /* Range Slider */
+    --range-thumb-clr: hsla(176, 100%, 44%, 1);
+    --range-bg-clr: hsla(268, 71%, 12%, 1);
 }
 
 
@@ -52,7 +115,6 @@ main {
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
 }
 
@@ -62,16 +124,12 @@ h1 {
 
 .slider-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
 }
 
 .slider-title {
     font-size: 12px;
     line-height: 11px;
     letter-spacing: 1px;
-    text-align: center;
 }
 
 .range-container {
@@ -108,7 +166,7 @@ input[type="range"]:focus {
 /******** Chrome, Safari, Opera and Edge Chromium styles ********/
 /* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #242d44;
+    background-color: var(--range-bg-clr);
     border-radius: 13px;
     height: 25px;
     padding-inline: 5px;
@@ -121,7 +179,7 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     margin-top: 4px;
     /* Centers thumb on the track */
-    background-color: #d03f2f;
+    background-color: var(--range-thumb-clr);
     border-radius: 50%;
     height: 18px;
     width: 18px;
@@ -135,14 +193,14 @@ input[type="range"]::-webkit-slider-thumb {
 /*********** Firefox styles ***********/
 /* slider track */
 input[type="range"]::-moz-range-track {
-    background-color: #242d44;
+    background-color: var(--range-bg-clr);
     border-radius: 13px;
     height: 26px;
 }
 
 /* slider thumb */
 input[type="range"]::-moz-range-thumb {
-    background-color: #d03f2f;
+    background-color: var(--range-thumb-clr);
     border: none;
     /*Removes extra border that FF applies*/
     border-radius: 50%;
@@ -151,7 +209,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 input[type="range"]:focus::-moz-range-thumb {
-    outline: 3px solid #d03f2f;
+    outline: 3px solid var(--range-thumb-clr);
     outline-offset: 0.125rem;
 }
 
@@ -161,20 +219,20 @@ input[type="range"]:focus::-moz-range-thumb {
     display: grid;
     grid-template-columns: 540px;
     grid-template-rows: minmax(128px, auto) 1fr;
-    border: red 1px solid;
-    gap: 2em;
+    gap: 24px;
 }
 
 .output {
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--output-clr);
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: flex-end;
     padding: 0.5em;
     word-wrap: break-word;
     word-break: break-all;
+    border-radius: 10px;
+    font-size: 56px;
 }
 
 .calculator-keys-grid {
@@ -184,14 +242,39 @@ input[type="range"]:focus::-moz-range-thumb {
     justify-content: center;
     align-content: center;
     gap: 24px;
-    background-color: blueviolet;
-    padding: 1.5em;
+    background-color: var(--keys-grid-bg-clr);
+    padding: 32px 30px;
+    border-radius: 10px;
 }
 
 .calculator-keys-grid > button {
-    border-radius: 1em;
+    border-radius: 10px;
+    border: none;
+
 }
 
 .span-two {
     grid-column: span 2;
+}
+
+.number,
+.operation {
+    background-color: var(--keys-operation-bg-clr);
+    color: var(--keys-number-text-clr);
+    font-size: 40px;
+    box-shadow: 0px -4px 0px 0px var(--bs-number-clr) inset;
+}
+
+.clear,
+.delete {
+    background-color: var(--keys-clear-bg-clr);
+    color: var(--keys-clear-text-clr);
+    font-size: 28px;
+    box-shadow: 0px -4px 0px 0px var(--bs-delete-clr) inset;
+}
+
+.equals {
+    background-color: var(--keys-equal-bg-clr);
+    color: var(--keys-equal-text-clr);
+    box-shadow: 0px -4px 0px 0px var(--bs-equals-clr) inset;
 }
