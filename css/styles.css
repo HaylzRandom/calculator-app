@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+/* Custom Properties */
+:root,
+:root.blue {
+    /* Background */
+    --bg-clr: hsla(223, 26%, 31%, 1);
+
+    /* Calculator Background */
+    --output-clr: hsla(224, 36%, 15%, 1);
+    --keys-grid-bg-clr: hsla(224, 30%, 21%, 1);
+    --keys-number-bg-clr: hsla(27, 15%, 65%, 1);
+    --keys-operation-bg-clr: hsla(27, 15%, 65%, 1);
+    --keys-clear-bg-clr: hsla(224, 21%, 49%, 1);
+    --keys-equal-bg-clr: hsla(6, 63%, 50%, 1);
+
+    /* Calculator Text */
+    --text-clr: hsla(0, 0%, 100%, 1);
+    --keys-number-text-clr: hsla(221, 14%, 31%, 1);
+    --keys-operation-text-clr: hsla(221, 14%, 31%, 1);
+    --keys-clear-text-clr: hsla(0, 0%, 100%, 1);
+    --keys-equal-text-clr: hsla(0, 0%, 100%, 1);
+
+    /* Range Slider */
+    --range-thumb-clr: hsla(6, 63%, 50%, 1);
+    --range-bg-clr: hsla(223, 31%, 20%, 1);
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-clr);
+    color: var(--text-clr);
+    font-family: 'League Spartan', sans-serif;
+    font-size: 32px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+.slider-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.slider-title {
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.range-container {
+    margin: auto;
+}
+
+.numbers,
+.slider {
+    display: flex;
+    justify-content: space-between;
+}
+
+.numbers span {
+    width: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 12px;
+}
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 70px;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #242d44;
+    border-radius: 13px;
+    height: 25px;
+    padding-inline: 5px;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: 4px;
+    /* Centers thumb on the track */
+    background-color: #d03f2f;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+}
+
+/* input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #d03f2f;
+    outline-offset: 0.125rem;
+} */
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #242d44;
+    border-radius: 13px;
+    height: 26px;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #d03f2f;
+    border: none;
+    /*Removes extra border that FF applies*/
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    outline: 3px solid #d03f2f;
+    outline-offset: 0.125rem;
+}
+
+/* Calculator */
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 540px;
+    grid-template-rows: minmax(128px, auto) 1fr;
+    border: red 1px solid;
+    gap: 2em;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.5em;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.calculator-keys-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 101px);
+    grid-template-rows: repeat(5, 64px);
+    justify-content: center;
+    align-content: center;
+    gap: 24px;
+    background-color: blueviolet;
+    padding: 1.5em;
+}
+
+.calculator-keys-grid > button {
+    border-radius: 1em;
+}
+
+.span-two {
+    grid-column: span 2;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="blue">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Calculator app</title>
+
+		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/reset.css" />
+		<script src="./js/main.js" defer></script>
+	</head>
+	<body>
+		<main>
+			<div class="header-container">
+				<h1 class="calc-title">calc</h1>
+				<div class="slider-container">
+					<span class="slider-title">THEME</span>
+					<div class="range-container">
+						<div class="numbers">
+							<span>1</span><span>2</span><span>3</span>
+						</div>
+
+						<div class="slider">
+							<input
+								type="range"
+								min="1"
+								max="3"
+								value="1"
+								name=""
+								class="theme-slider"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="calculator-grid">
+				<div class="output">123</div>
+				<div class="calculator-keys-grid">
+					<button class="number">7</button>
+					<button class="number">8</button>
+					<button class="number">9</button>
+					<button class="delete">DEL</button>
+					<button class="number">4</button>
+					<button class="number">5</button>
+					<button class="number">6</button>
+					<button class="operation">&#43;</button>
+					<button class="number">1</button>
+					<button class="number">2</button>
+					<button class="number">3</button>
+					<button class="operation">&#8722;</button>
+					<button class="number">&#46;</button>
+					<button class="number">0</button>
+					<button class="operation">/</button>
+					<button>&#215;</button>
+					<button class="span-two clear">RESET</button>
+					<button class="span-two equals">&#61;</button>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
