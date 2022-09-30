@@ -2,7 +2,6 @@ const slider = document.getElementById('theme-slider');
 
 slider.addEventListener('change', () => {
 	const theme = slider.value;
-	console.log(slider.value);
 	switch (theme) {
 		case '1':
 			setTheme('blue');
