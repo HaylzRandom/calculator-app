@@ -117,6 +117,7 @@ body {
     color: var(--text-clr);
     font-family: 'League Spartan', sans-serif;
     font-size: 32px;
+    padding: 1em;
 }
 
 main {
@@ -124,7 +125,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: 32px;
 }
 
 .header-container {
@@ -145,6 +146,8 @@ h1 {
     font-size: 12px;
     line-height: 11px;
     letter-spacing: 1px;
+    margin-top: 28px;
+    margin-right: 10px;
 }
 
 .range-container {
@@ -218,25 +221,21 @@ input[type="range"]::-moz-range-thumb {
     border: none;
     /*Removes extra border that FF applies*/
     border-radius: 50%;
-    height: 16px;
-    width: 16px;
+    height: 18px;
+    width: 18px;
 }
 
 input[type="range"]::-moz-range-thumb:hover {
     background-color: var(--range-thumb-hover-clr);
 }
 
-input[type="range"]:focus::-moz-range-thumb {
-    outline: 3px solid var(--range-thumb-clr);
-    outline-offset: 0.125rem;
-}
-
 /* Calculator */
 
 .calculator-grid {
     display: grid;
-    grid-template-columns: 540px;
-    grid-template-rows: minmax(128px, auto) 1fr;
+    /* grid-template-columns: 540px; */
+    grid-template-columns: min-content;
+    grid-template-rows: minmax(64px, auto);
     gap: 24px;
 }
 
@@ -244,13 +243,38 @@ input[type="range"]:focus::-moz-range-thumb {
     grid-column: 1 / -1;
     background-color: var(--output-clr);
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
     padding: 0.5em;
     word-wrap: break-word;
     word-break: break-all;
     border-radius: 10px;
-    font-size: 56px;
+    height: 128px;
+    overflow: hidden;
+}
+
+.output .previous-operand {
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+.output .current-operand {
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .calculator-grid {
+        grid-template-columns: 327px;
+    }
+
+    .output .previous-operand {
+        font-size: 1rem;
+    }
+
+    .output .current-operand {
+        font-size: 2rem;
+    }
 }
 
 .calculator-keys-grid {
@@ -265,10 +289,24 @@ input[type="range"]:focus::-moz-range-thumb {
     border-radius: 10px;
 }
 
+
+
 .calculator-keys-grid > button {
     border-radius: 10px;
     border: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .calculator-keys-grid {
+        grid-template-columns: repeat(4, 64px);
+        gap: 13px;
+        padding: 24px;
+    }
+
+    .calculator-keys-grid > button {
+        border-radius: 5px;
+    }
 }
 
 .span-two {
@@ -283,6 +321,8 @@ input[type="range"]:focus::-moz-range-thumb {
     box-shadow: 0px -4px 0px 0px var(--bs-number-clr) inset;
 }
 
+
+
 .number:hover,
 .operation:hover {
     background-color: var(--keys-number-bg-hover-clr);
@@ -294,6 +334,19 @@ input[type="range"]:focus::-moz-range-thumb {
     color: var(--keys-clear-text-clr);
     font-size: 28px;
     box-shadow: 0px -4px 0px 0px var(--bs-delete-clr) inset;
+}
+
+@media screen and (max-width: 768px) {
+
+    .number,
+    .operation {
+        font-size: 32px;
+    }
+
+    .clear,
+    .delete {
+        font-size: 20px;
+    }
 }
 
 .clear:hover,
