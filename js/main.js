@@ -51,15 +51,6 @@ class Calculator {
 	}
 
 	apppendNumber(number) {
-		// Avoiding 0 divided by 0
-		let zeroStart = true;
-
-		if (zeroStart && number === '0') {
-			zeroStart = false;
-			this.clear();
-			this.previousOperandEle.innerText = 'Error';
-		}
-
 		if (number === '.') {
 			this.currentOperand = `0${this.currentOperand.toString()}`;
 		}

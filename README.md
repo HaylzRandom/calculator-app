@@ -36,6 +36,16 @@ Here are some related projects
 - [Single Price Grid Component](https://github.com/HaylzRandom/single-price-component)
 - [Ping Single Column Page](https://github.com/HaylzRandom/ping-single-column-page)
 
+## Demo
+
+<img src="./screenshots/calculator.gif" alt="Calculator Gif" width="200"  />
+
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+Desktop
+
+<img src="./screenshots/desktop-screenshot.png" alt="Desktop Screenshot Screenshot" width="400" />
+
+Mobile
+
+<img src="./screenshots/mobile-screenshot.png" alt="Mobile Screenshot" width="400" />
